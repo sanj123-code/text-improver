@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Text Improver (AI)</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial;
+            background-color: #f3e8ff;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 40px auto;
+            padding: 20px;
+            border: 2px solid black;
+            border-radius: 10px;
+            background-color: white;
+        }
+
+        h1 {
+            text-align: center;
+            color: brown;
+        }
+
+        textarea {
+            width: 100%;
+            height: 120px;
+            padding: 12px;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        select, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        #output {
+            margin-top: 15px;
+            padding: 12px;
+            border: 1px solid black;
+            min-height: 60px;
+            white-space: pre-wrap;
+        }
+
+        .clear-btn {
+            background-color: #ddd;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>✨ AI Text Improver</h1>
+
+    <form method="POST">
+
+        <textarea name="text" placeholder="Enter your text..."></textarea>
+
+        <select name="mode">
+            <option value="Improve grammar">Improve Grammar</option>
+            <option value="Make professional">Make Professional</option>
+            <option value="Make friendly">Make Friendly</option>
+        </select>
+
+        <button type="submit">Improve</button>
+
+    </form>
+
+    <button class="clear-btn" onclick="clearText()">Clear</button>
+
+    <div id="output">
+        {% if output %}
+            {{ output }}
+        {% else %}
+            Your improved text will appear here...
+        {% endif %}
+    </div>
+
+</div>
+
+<script>
+function clearText() {
+    document.querySelector("textarea").value = "";
+}
+</script>
+
+</body>
+</html>
